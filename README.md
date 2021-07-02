@@ -1,6 +1,9 @@
 # Keycaps
 The C64MiniStemCap fits on the stem of the 5.8x5.8x10mm pushbutton switch used on Dean Woolyatt's keyboard kit for the C64 Mini.
-Using this cap when gluing on the keycaps achieves two things: They make the keycaps removable, and, being removable, they keycaps can be produced in a much simpler manner than the one recommended in the installation instructions. Instead of making a plaster cast of the keycap sheets and using them as a jig to glue the caps on, you can glue the sheets on as-is, remove them from the stems and separate the keycaps afterwards.
+Using these caps when gluing on the keycaps achieves two things: They make the keycaps removable, and, being removable, they keycaps can be produced in a much simpler manner than the one recommended in the installation instructions. Instead of making a plaster cast of the keycap sheets and using them as a jig to glue the caps on, you can glue the sheets on as-is, remove them from the stems and separate the keycaps afterwards.
+
+When gluing the keycaps (using very slow-hardening JB Weld epoxy glue for strength and to give me plenty of time to prepare everything) I use M2 screws with a single nut as a standoff between the PCB and the keycap sheets. _Make sure none of the pushbuttons are depressed when gluing!_
+
 ![Lil' caps on the stems](DSC_1273_small.jpg)
 ![Gluing the keycaps on](DSC_1275_small.jpg)
 ![Keycaps glued](DSC_1276_small.jpg)
