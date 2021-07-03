@@ -26,7 +26,7 @@ If you want to load a custom firmware, here's how I install it, for reference:
 
 Here's mine:
 ```
-"VeryLongPath/bin/avrdude" "-CVeryLongPath/etc/avrdude.conf" -v -patmega32u4 -cavr109 -PCOM22 -b57600 -D "-Uflash:w:K:\Hans Liss\Temp\TheC64Mini\C64_TheC64Maxi.hex:i" 
+"VeryLongPath/bin/avrdude" "-CVeryLongPath/etc/avrdude.conf" -v -patmega32u4 -cavr109 -PCOM22 -b57600 -D "-Uflash:w:TheC64Mini_default.hex:i" 
 ```
 
 I use a slightly modified version of the VICE keymap from the The C64 in order to achieve this (the keymap is found at _/usr/lib/vice/C64/theC64-sym-CLASSIC.vkm_).
