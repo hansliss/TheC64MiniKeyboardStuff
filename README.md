@@ -10,14 +10,16 @@ When gluing the keycaps (using very slow-hardening JB Weld epoxy glue for streng
 ![The result](DSC_1281_small.jpg)
 
 # Keymap
-I use an alternate keymap for this (not included here, since it's heavily based on Dean's map), based on the one used in the The C64. It makes the keyboard 100% compatible with a real C64 keyboard.
+I use an alternate HID keymap for this, based on the one used in the The C64. It makes the keyboard 100% compatible with a real C64 keyboard. Note: the original QMK-based keymap I used was based on Dean's QMK code, graciously shared by him but impossible for me to share.
 
-If you make a QMK firmware for this, here's how I install it, for reference:
-* Start a project in the Arduino IDE for the SparkFun Pro Micro. Don't worry about the code, the empty default project will do.
+In order to make my keymap available in reasonably good conscience, I reverse-engineered the wiring (without looking at the existing code) using the little Arduino hack in **TheC64Mini_pintest**, and then I tried adapting my existing Arduino-based keyboard scanner, developed for the [binkey](https://githubcom/hansliss/binkey) project. This worked very well, except in the actual The C64 Mini (probably something to do with how an Arduino presents itself on the USB bus), so I ended up creating my own QMK keyboard firmware from scratch instead, built with qmk 0.1.0. The keyboard subdirectory for this is in the **QMK** directory. The firmware is in **TheC64Mini_default.hex**.
+
+If you want to load a custom firmware, here's how I install it, for reference:
+* Start a project in the Arduino IDE for a SparkFun Pro Micro. Don't worry about the code, the empty default project will do.
 * Go to File | Preferences and make sure "Show verbose output during upload" is checked.
 * Connect the keyboard the the PC, short the "Reset" pads on the keyboard and then initiate a download.
 * Now you can scroll to the top in the output pane and copy the command listed there.
-* Start a CMD command interface and copy the command there.
+* Start a CMD command interface and copy the _avrdude_ command there.
 * If there are spaces in the directory path to your user directory, you need to add double quotes around all the command parts referring to those directories.
 * Change the path and file name of the .hex file to be downloaded, so it refers to the QMK firmware hex file.
 * Short the "reset" pads again, and then run the modified command.
@@ -32,7 +34,7 @@ I use a slightly modified version of the VICE keymap from the The C64 in order t
 The document **The C64 keycodes.pdf** lists the original keycodes emitted by the The C64 keyboard. The only keys that don't work for me on the The C64 Mini are the "+" and "-" keys, so I just remapped those from 0x57/0x56 to 0xC1/0xC2, which is reflected in the included copy of **theC64-sym-CLASSIC.vkm**. Copy this file to _/usr/lib/vice/C64/theC64sym-UK.vkm_ and make sure to choose the UK layout in the GUI.
 
 # Installing the keymap
-In order to copy this keymap, you will need a serial console interface. I've settled on a design where I just route the TTL level serial pins from the computer to a 3.5mm phono jack, with DCE RX at the tip, TX on the ring and GND on the sleeve. I use a USB-to-serial interface (set to 3.3v) with a fixed cable with a 3.5mm plug at the end, with TX on the tip, RX on the ring and GND on the sleeve.
+In order to copy the VICE keymap, you will need a serial console interface on your The C64 Mini, which is lots of fun in other ways too. I've settled on a design where I just route the TTL level serial pins from the computer to a 3.5mm phono jack, with DCE RX at the tip, TX on the ring and GND on the sleeve. I use a USB-to-serial interface (set to 3.3v) with a fixed cable with a 3.5mm plug at the end, with TX on the tip, RX on the ring and GND on the sleeve.
 
 ![Inside the The C64 Mini](2021-06-29%2014.33.16.jpg)
 ![Serial port](2021-06-29%2014.33.54.jpg)

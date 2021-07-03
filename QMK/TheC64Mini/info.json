@@ -1,0 +1,10 @@
+{
+    "keyboard_name": "TheC64Mini",
+    "url": "",
+    "maintainer": "Hans Liss",
+    "usb": {
+      "vid": "0xBEEF",
+      "pid": "0xDEAD",
+      "device_ver": "0x0001"
+    }
+}
