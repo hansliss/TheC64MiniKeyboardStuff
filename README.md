@@ -38,6 +38,7 @@ In order to copy the VICE keymap, you will need a serial console interface on yo
 
 ![Inside the The C64 Mini](2021-06-29%2014.33.16.jpg)
 ![Serial port](2021-06-29%2014.33.54.jpg)
+![USB interface](2021-07-03%2022.20.45.jpg)
 
 Once you have a serial interface rigged like this, and the USB adapter connected to your computer, use a terminal program set to 115200 baud, 8N1, and start up the The C64 Mini. Log in as _root_ with the password _chuckpeddle_.
 
