@@ -34,7 +34,19 @@ I use a slightly modified version of the VICE keymap from the The C64 in order t
 The document **The C64 keycodes.pdf** lists the original keycodes emitted by the The C64 keyboard. The only keys that don't work for me on the The C64 Mini are the "+" and "-" keys, so I just remapped those from 0x57/0x56 to 0xC1/0xC2, which is reflected in the included copy of **theC64-sym-CLASSIC.vkm**. Copy this file to _/usr/lib/vice/C64/theC64sym-UK.vkm_ and make sure to choose the UK layout in the GUI.
 
 # Installing the keymap
-In order to copy the VICE keymap, you will need a serial console interface on your The C64 Mini, which is lots of fun in other ways too. I've settled on a design where I just route the TTL level serial pins from the computer to a 3.5mm phono jack, with DCE RX at the tip, TX on the ring and GND on the sleeve. I use a USB-to-serial interface (set to 3.3v) with a fixed cable with a 3.5mm plug at the end, with TX on the tip, RX on the ring and GND on the sleeve.
+In order to copy the VICE keymap, you can either use a serial console interface on your The C64 Mini (see below) or use jj0's [On-screen Command Line](https://thec64community.online/thread/806/the64-on-screen-command-line)
+
+If you use the on-screen command line, add the keymap to your USB stick before starting the shell. Then, with the shell open, you need to make the root disk writable, back up the original keymap, and then copy the new one to the root disk. Then you make the root disk read-only again:
+```
+mount -rw -o remount /
+mv /usr/lib/vice/C64/theC64-sym-UK.vkm /usr/lib/vice/C64/theC64-sym-UK.save
+cp /mnt/theC64-sym-CLASSIC.vkm /usr/lib/vice/C64/theC64sym-UK.vkm
+mount -r -o remount /
+```
+
+Then exit the shell with ```exit```.
+
+Here's how to add a serial interface which is both useful and lots of fun to have. I've settled on a design where I just route the TTL level serial pins from the computer to a 3.5mm phono jack, with DCE RX at the tip, TX on the ring and GND on the sleeve. I use a USB-to-serial interface (set to 3.3v) with a fixed cable with a 3.5mm plug at the end, with TX on the tip, RX on the ring and GND on the sleeve.
 
 ![Inside the The C64 Mini](2021-06-29%2014.33.16.jpg)
 ![Serial port](2021-06-29%2014.33.54.jpg)
