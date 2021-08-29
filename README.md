@@ -10,7 +10,7 @@ When gluing the keycaps (using very slow-hardening JB Weld epoxy glue for streng
 ![The result](Images/Final_result.jpg)
 
 # Keymap
-I use an alternate HID keymap for this, based on the one used in the The C64. It makes the keyboard 100% compatible with a real C64 keyboard. Note: the original QMK-based keymap I used was based on Dean's QMK code, graciously shared with me by him, but impossible for me to share with others without his explicit permission.
+I use an alternate HID keymap for this, based on the one used in the The C64. It makes the keyboard 100% compatible with a real C64 keyboard. I had to deviate from the The C64 keymap on the "+" and "-" keys, unfortunately, since the original keycodes didn't work in the Mini. Note: the original QMK-based keymap I used was based on Dean's QMK code, graciously shared with me by him, but impossible for me to share with others without his explicit permission.
 
 In order to make my keymap available in reasonably good conscience, I reverse-engineered the wiring (without looking at the existing code) using the little Arduino hack in **TheC64Mini_pintest**, and then I tried adapting my existing Arduino-based keyboard scanner, developed for the [c128kbd](https://github.com/hansliss/c128kbd) project. This worked very well, except in the actual The C64 Mini (probably something to do with how an Arduino presents itself on the USB bus), so I ended up creating my own QMK keyboard firmware from scratch instead, built with qmk 0.1.0. The keyboard subdirectory for this is in the **QMK** directory. The firmware is in **TheC64Mini_default.hex**.
 
