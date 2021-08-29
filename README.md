@@ -4,10 +4,10 @@ Using these caps when gluing on the keycaps achieves two things: They make the k
 
 When gluing the keycaps (using very slow-hardening JB Weld epoxy glue for strength and to give me plenty of time to prepare everything) I use M2 screws with a single nut as a standoff between the PCB and the keycap sheets. _Make sure none of the pushbuttons are depressed when gluing!_
 
-![Lil' caps on the stems](DSC_1273_small.jpg)
-![Gluing the keycaps on](DSC_1275_small.jpg)
-![Keycaps glued](DSC_1276_small.jpg)
-![The result](DSC_1281_small.jpg)
+![Lil' caps on the stems](Key_stem_caps.jpg)
+![Gluing the keycaps on](Keycap_gluing.jpg)
+![Keycaps glued](Keycaps_glued.jpg)
+![The result](Final_result.jpg)
 
 # Keymap
 I use an alternate HID keymap for this, based on the one used in the The C64. It makes the keyboard 100% compatible with a real C64 keyboard. Note: the original QMK-based keymap I used was based on Dean's QMK code, graciously shared with me by him, but impossible for me to share with others without his explicit permission.
@@ -48,9 +48,9 @@ Then exit the shell with ```exit```.
 
 Here's how to add a serial interface which is both useful and lots of fun to have. I've settled on a design where I just route the TTL level serial pins from the computer to a 3.5mm phono jack, with DCE RX at the tip, TX on the ring and GND on the sleeve. I use a USB-to-serial interface (set to 3.3v) with a fixed cable with a 3.5mm plug at the end, with TX on the tip, RX on the ring and GND on the sleeve.
 
-![Inside the The C64 Mini](2021-06-29%2014.33.16.jpg)
-![Serial port](2021-06-29%2014.33.54.jpg)
-![USB interface](2021-07-03%2022.20.45.jpg)
+![Inside the The C64 Mini](Serial_interface_installed.jpg)
+![Serial port](Serial_interface_socket.jpg)
+![USB interface](USB_adapter.jpg)
 
 Once you have a serial interface rigged like this, and the USB adapter connected to your computer, use a terminal program set to 115200 baud, 8N1, and start up the The C64 Mini. Log in as _root_ with the password _chuckpeddle_.
 
