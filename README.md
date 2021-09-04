@@ -36,7 +36,12 @@ The document **The C64 keycodes.pdf** lists the original keycodes emitted by the
 # Installing the keymap
 In order to copy the VICE keymap, you can either use a serial console interface on your The C64 Mini (see below) or use jj0's [On-screen Command Line](https://thec64community.online/thread/806/the64-on-screen-command-line)
 
-If you use the on-screen command line, add the keymap to your USB stick before starting the shell. Then, with the shell open, you need to make the root disk writable, back up the original keymap, and then copy the new one to the root disk. Then you make the root disk read-only again:
+If you are using the on-screen command line, I've provided two scripts that can be added to the USB stick to simplify the process. Add the keymap _theC64-sym-CLASSIC.vkm_ to the root of the USB stick, and then copy _restoremap_ and _installmap_ to _Yaft/bin_ on the USB stick.
+
+After starting the shell according to the instructions, you can use the commands _installmap_ to install the keymap, and _restoremap_ to restore the factory-installed one.
+
+Here's the manual procedure for installing the map using the on-screen command line:
+Add the keymap theC64-sym-CLASSIC.vkm to the root of your USB stick before starting the shell. Then, with the shell open, you need to make the root disk writable, back up the original keymap, and then copy the new one to the root disk. Then you make the root disk read-only again:
 ```
 mount -rw -o remount /
 mv /usr/lib/vice/C64/theC64-sym-UK.vkm /usr/lib/vice/C64/theC64-sym-UK.save

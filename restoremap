@@ -1,0 +1,25 @@
+#!/bin/sh
+
+LANG=${1-UK}
+case "$LANG" in
+  UK|US|FR|DE|ES|IT)
+    ;;
+  *)
+    echo "Unknown language $LANG. Use UK, US, FR, DE, IT or ES."
+    exit 1
+    ;;
+esac
+MAPFILE=/usr/lib/vice/C64/theC64-sym-$LANG.vkm
+ORGFILE=$MAPFILE.org
+if [ ! -f "$MAPFILE" ]; then
+  echo "No map file for $LANG. Something is wrong."
+  exit 1
+fi
+if [ -f $ORGFILE ]; then
+  mount -rw -o remount /
+  mv $ORGFILE $MAPFILE
+  mount -r -o remount /
+  echo "Restored the $LANG keymap"
+else
+  echo "No saved map found. Not switched?"
+fi
